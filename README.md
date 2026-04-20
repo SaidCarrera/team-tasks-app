@@ -1,102 +1,98 @@
 # Team Tasks App
 
-Aplicación Full Stack para gestión de tareas de equipo, desarrollada como parte de una evaluación práctica de AI-Augmented Development.
-
----
+Aplicación Full Stack para la gestión de tareas de equipo, desarrollada como parte de una evaluación práctica de AI-Augmented Development.
 
 ## 🧠 Stack utilizado
 
-- **Backend:** NestJS
-- **Frontend:** React + Vite
-- **Base de datos:** MySQL
-- **ORM:** TypeORM
-- **Validaciones:** class-validator
-- **Testing:** Jest + Supertest
-- **AI Tools:** ChatGPT
-
----
+- Backend: NestJS
+- Frontend: React + Vite
+- Base de datos: MySQL
+- ORM: TypeORM
+- Validaciones: class-validator
+- Testing: Jest + Supertest
+- AI Tools: ChatGPT
 
 ## 📁 Estructura del proyecto
-team-tasks-app/
-backend/
-frontend/
-AI_LOG.md
-README.md
 
----
+team-tasks-app/
+├── backend/
+├── frontend/
+├── AI_LOG.md
+├── README.md
+└── exports/ (opcional)
 
 ## ⚙️ Configuración del backend
 
-### 1. Crear base de datos
+1. Crear base de datos
 
-```sql
 CREATE DATABASE team_tasks_db;
 
-2. backend/.env
+2. Variables de entorno (backend/.env)
 
-DB_HOST=localhost
-DB_PORT=3306
-DB_USERNAME=root
-DB_PASSWORD=tu_password
-DB_NAME=team_tasks_db
-PORT=3001
-FRONTEND_URL=http://localhost:3000
+DB_HOST=localhost  
+DB_PORT=3306  
+DB_USERNAME=root  
+DB_PASSWORD=tu_password  
+DB_NAME=team_tasks_db  
+PORT=3001  
+FRONTEND_URL=http://localhost:3000  
 
+3. Instalar dependencias y ejecutar backend
 
-3. Instalar dependencias y ejecutar
+cd backend  
+npm install  
+npm run start:dev  
 
-cd backend
-npm install
-npm run start:dev
+El backend estará disponible en:  
+http://localhost:3001  
 
-El backend correrá en:
-http://localhost:3001
+## 🎨 Frontend
 
+Instalar dependencias y ejecutar frontend
 
+cd frontend  
+npm install  
+npm run dev  
 
-Frontend
+El frontend estará disponible en:  
+http://localhost:3000  
 
-cd frontend
-npm install
-npm run dev
+## 🔌 Endpoints principales
 
-El frontend correrá en:
-http://localhost:3000
+GET /api/tasks  
+POST /api/tasks  
+PATCH /api/tasks/:id/status  
+DELETE /api/tasks/:id  
 
+## 🧪 Tests
 
-Endpoints principales
+cd backend  
+npm run test:e2e  
 
-* GET /api/tasks
-* POST /api/tasks
-* PATCH /api/tasks/:id/status
-* DELETE /api/tasks/:id
+Incluye test para creación de tareas (POST /api/tasks)
 
-Tests
+## 🚀 Funcionalidades implementadas
 
-cd backend
-npm run test:e2e
+- Crear tareas  
+- Listar tareas  
+- Filtrar tareas por estado  
+- Cambiar estado de tareas  
+- Eliminar tareas  
+- Validación de datos en backend  
+- Manejo de errores  
+- Integración completa frontend-backend  
+- Test de integración  
 
-Se incluye un test de integración para:
+## 🤖 Uso de AI
 
-* POST /api/tasks
+El uso de herramientas de AI está documentado en AI_LOG.md incluyendo prompts, problemas encontrados y correcciones aplicadas.
 
-Funcionalidades implementadas
+## 📝 Notas
 
-* Crear tareas
-* Listar tareas
-* Filtrar por estado
-* Cambiar estado de tareas
-* Eliminar tareas
-* Manejo de errores del backend
-* Validación de datos
-* Test de integración
-* Integración completa frontend-backend
+- El proyecto fue desarrollado priorizando claridad en el uso de AI y corrección del código generado.  
+- Se aplicaron validaciones en backend para asegurar integridad de datos.  
+- El frontend consume directamente la API REST.  
 
+## 👤 Autor
 
-Uso de AI
-
-El uso de herramientas de AI fue documentado en detalle en el archivo AI_LOG.md, incluyendo prompts, problemas encontrados y correcciones aplicadas.
-
-![alt text](<Captura de pantalla 2026-04-18 a la(s) 1.08.19 p. m..png>)
-
-![alt text](<Captura de pantalla 2026-04-18 a la(s) 11.57.03 a. m..png>)
+Said Carrera
