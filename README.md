@@ -70,6 +70,10 @@ npm run test:e2e
 
 Incluye test para creación de tareas (POST /api/tasks)
 
+![alt text](<Resultado Postman.png>)
+
+![alt text](<Resultado del test ejecutado.png>)
+
 ## 🚀 Funcionalidades implementadas
 
 - Crear tareas  
