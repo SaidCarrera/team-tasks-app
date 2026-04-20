@@ -19,7 +19,6 @@ team-tasks-app/
 ├── frontend/
 ├── AI_LOG.md
 ├── README.md
-└── exports/ (opcional)
 
 ## ⚙️ Configuración del backend
 
