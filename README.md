@@ -69,9 +69,10 @@ cd backend
 npm run test:e2e  
 
 Incluye test para creación de tareas (POST /api/tasks)
-
+Resultado Postman
 ![alt text](<Resultado Postman.png>)
 
+Resultado del test ejecutado
 ![alt text](<Resultado del test ejecutado.png>)
 
 ## 🚀 Funcionalidades implementadas
