@@ -1,77 +1,91 @@
 # AI_LOG.md
 
-## Entrada #1 — Herramienta: ChatGPT
+Registro del uso de herramientas de inteligencia artificial durante el desarrollo del proyecto.
 
-**Prompt enviado:**
-"Crear estructura base de backend en NestJS con conexión a MySQL usando TypeORM"
+## Entrada 1
 
-**Problema encontrado:**
-Inicialmente el proyecto fue generado con configuración de TypeScript usando `module: nodenext`, lo que causó errores en imports y resolución de módulos.
+Herramienta: ChatGPT
 
-**Corrección aplicada:**
-Se ajustó el `tsconfig.json` para usar `commonjs` y `moduleResolution: node`, lo cual es compatible con NestJS. Se reinició el servidor de TypeScript para aplicar los cambios.
+Prompt:
+"Crear backend en NestJS con conexión a MySQL usando TypeORM para gestión de tareas"
 
----
+Problema:
+El proyecto inicial presentaba errores de configuración en TypeScript debido al uso de module: nodenext, lo que causaba problemas en imports y resolución de módulos.
 
-## Entrada #2 — Herramienta: ChatGPT
-
-**Prompt enviado:**
-"Definir entidad Task con TypeORM y validaciones en DTO"
-
-**Problema encontrado:**
-Errores de TypeScript en propiedades de la entidad debido a `strictPropertyInitialization`.
-
-**Corrección aplicada:**
-Se configuró `strictPropertyInitialization: false` en el `tsconfig.json` para evitar errores en propiedades definidas por TypeORM.
+Corrección:
+Se modificó el tsconfig.json para usar module: commonjs y moduleResolution: node, lo cual es compatible con NestJS. Se reinició el servidor de TypeScript para aplicar los cambios.
 
 ---
 
-## Entrada #3 — Herramienta: ChatGPT
+## Entrada 2
 
-**Prompt enviado:**
+Herramienta: ChatGPT
+
+Prompt:
+"Definir entidad Task con TypeORM y validaciones usando class-validator"
+
+Problema:
+Se presentaron errores en las propiedades de la entidad debido a strictPropertyInitialization en TypeScript.
+
+Corrección:
+Se configuró strictPropertyInitialization: false en el tsconfig.json para evitar errores en propiedades manejadas por TypeORM.
+
+---
+
+## Entrada 3
+
+Herramienta: ChatGPT
+
+Prompt:
 "Crear endpoints CRUD en NestJS para entidad Task"
 
-**Problema encontrado:**
-Problemas al manejar parámetros de query (`status`) como enum en el controller.
+Problema:
+El parámetro status en el endpoint GET generaba conflictos al intentar usar directamente el enum en el controller.
 
-**Corrección aplicada:**
-Se ajustó el controller para recibir el query param como string y luego castear a `TaskStatus`.
-
----
-
-## Entrada #4 — Herramienta: ChatGPT
-
-**Prompt enviado:**
-"Crear frontend en React con formulario y consumo de API REST"
-
-**Problema encontrado:**
-Errores en requests por formato incorrecto de JSON y manejo de errores del API.
-
-**Corrección aplicada:**
-Se corrigieron headers (`Content-Type: application/json`) y se implementó manejo de errores tanto en creación como en actualización de tareas.
+Corrección:
+Se ajustó el controller para recibir el parámetro como string y luego convertirlo a TaskStatus.
 
 ---
 
-## Entrada #5 — Herramienta: ChatGPT
+## Entrada 4
 
-**Prompt enviado:**
+Herramienta: ChatGPT
+
+Prompt:
+"Crear frontend en React que consuma API REST para gestión de tareas"
+
+Problema:
+Errores en las peticiones HTTP debido a formato incorrecto del JSON y falta de headers.
+
+Corrección:
+Se corrigió el formato del body y se añadieron headers Content-Type: application/json. Se implementó manejo de errores en el frontend.
+
+---
+
+## Entrada 5
+
+Herramienta: ChatGPT
+
+Prompt:
 "Crear test de integración para endpoint POST /api/tasks en NestJS"
 
-**Problema encontrado:**
-Error `request is not a function` al usar `supertest` con import estándar.
+Problema:
+Error 'request is not a function' al utilizar supertest.
 
-**Corrección aplicada:**
-Se cambió el import a `require('supertest')` para asegurar compatibilidad con la configuración actual de TypeScript y Jest.
+Corrección:
+Se cambió la forma de importación de supertest utilizando require para asegurar compatibilidad con la configuración del proyecto.
 
 ---
 
-## Entrada #6 — Herramienta: ChatGPT
+## Entrada 6
 
-**Prompt enviado:**
+Herramienta: ChatGPT
+
+Prompt:
 "Configurar CORS y validación global en NestJS"
 
-**Problema encontrado:**
-El frontend no podía comunicarse con el backend correctamente.
+Problema:
+El frontend no podía comunicarse correctamente con el backend.
 
-**Corrección aplicada:**
-Se habilitó CORS en `main.ts` para permitir requests desde `http://localhost:3000` y se configuró `ValidationPipe` global para validar inputs.
+Corrección:
+Se habilitó CORS en main.ts y se configuró ValidationPipe global para validar los datos de entrada.
